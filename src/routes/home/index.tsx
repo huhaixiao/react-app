@@ -2,7 +2,7 @@ import React, { StrictMode, Suspense, useLayoutEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { ThemeContextProvider } from "../../hooks/theme";
 import { createGlobalStyle } from "styled-components";
-import { Link } from '../../components';
+import { Link } from "../../components";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -36,17 +36,11 @@ export const Home = () => {
       <StrictMode>
         <Suspense fallback={<Loading />}>
           <ThemeContextProvider>
-            <div className="grid grid-cols-12">
-              <Link
-                className="text-white m-auto block text-center"
-                href="/core/"
-                target="_blank"
-              >
+            <div>
+              <Link href="/core/" target="_blank">
                 one
               </Link>
-              <Link className="text-white" to="/login">
-                Login
-              </Link>
+              <Link to="/login">Login</Link>
             </div>
             <Outlet />
           </ThemeContextProvider>

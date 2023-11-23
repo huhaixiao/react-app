@@ -1,7 +1,6 @@
 import * as path from "path";
 import * as webpack from "webpack";
 import { merge } from "webpack-merge";
-import CopyPlugin from "copy-webpack-plugin";
 import Config from "./webpack.common";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
@@ -10,15 +9,6 @@ const config: webpack.Configuration = merge(Config, {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.prod.ejs",
-    }),
-    new CopyPlugin({
-      patterns: [
-        // { from: "public", to: "" },
-        { from: ".github", to: ".github" },
-      ],
-      options: {
-        concurrency: 100,
-      },
     })
   ],
   output: {
@@ -38,10 +28,7 @@ const config: webpack.Configuration = merge(Config, {
           },
           {
             loader: "css-loader",
-          },
-          {
-            loader: "postcss-loader",
-          },
+          }
         ],
       },
       {

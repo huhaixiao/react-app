@@ -29,9 +29,6 @@ const config: webpack.Configuration = merge(Config, {
           {
             loader: "css-loader",
           },
-          {
-            loader: 'postcss-loader'
-          }
         ],
       },
       {
