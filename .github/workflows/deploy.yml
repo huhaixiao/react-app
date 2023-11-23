@@ -7,7 +7,10 @@ on:
     branches: [ "main" ]
 
 jobs:
+  # Build job
   build:
+    # <Not provided for brevity>
+    # At a minimum this job should upload artifacts using actions/upload-pages-artifact
     runs-on: ubuntu-latest
 
     strategy:
@@ -35,6 +38,18 @@ jobs:
       with:
         path: 'dist'
 
+  # Deploy job
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v2
+      uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
