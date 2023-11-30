@@ -1,8 +1,13 @@
 import React, { StrictMode, Suspense, useLayoutEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { ThemeContextProvider } from "../../hooks/theme";
-import { createGlobalStyle } from "styled-components";
+import {
+  GlobalStyleComponent,
+  ThemeProps,
+  createGlobalStyle,
+} from "styled-components";
 import { Link } from "../../components";
+import { Editor } from "../../components/editor";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -11,7 +16,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: black;
+    background-color: ${(
+      props: ThemeProps<{ bg: string }>
+    ) => props.theme.bg};
   }
 `;
 
@@ -43,6 +50,7 @@ export const Home = () => {
               <Link to="/login">Login</Link>
             </div>
             <Outlet />
+            <Editor />
           </ThemeContextProvider>
         </Suspense>
       </StrictMode>
