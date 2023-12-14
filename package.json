@@ -1,14 +1,15 @@
 {
   "name": "client",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack serve --config webpack.dev.ts",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.ts"
+    "start": "ts-node scripts/start.ts",
+    "build": "ts-node scripts/build.ts"
   },
   "dependencies": {
     "@ant-design/pro-components": "^2.6.35",
     "@ckeditor/ckeditor5-build-classic": "^40.1.0",
     "@ckeditor/ckeditor5-react": "^6.2.0",
     "antd": "^5.11.1",
+    "eventemitter3": "^5.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.2",

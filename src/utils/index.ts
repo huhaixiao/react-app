@@ -1,3 +1,1 @@
-export const foo = () => {
-  console.log('bar')
-}
+export { isPromise } from "./validate";

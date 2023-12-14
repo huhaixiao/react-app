@@ -12,7 +12,7 @@ const config: webpack.Configuration = merge(Config, {
   devtool: "source-map",
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.dev.ejs",
+      template: path.resolve(__dirname, '../src/index.dev.ejs'),
     }),
     new ReactRefreshPlugin({
       overlay: true,
@@ -53,7 +53,7 @@ const config: webpack.Configuration = merge(Config, {
     port: 8000,
     open: true,
     static: {
-      directory: path.join(__dirname, "public"),
+      directory: path.join(__dirname, "../public"),
     },
     historyApiFallback: true,
     proxy: {},

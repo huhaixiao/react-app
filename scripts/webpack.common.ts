@@ -1,7 +1,8 @@
 import * as webpack from "webpack";
+import * as path from 'path';
 
 const config: webpack.Configuration = {
-  entry: "./src/index.tsx",
+  entry: path.resolve(__dirname, '../src/index.tsx'),
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },

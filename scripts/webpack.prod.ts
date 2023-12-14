@@ -8,11 +8,11 @@ const config: webpack.Configuration = merge(Config, {
   mode: "production",
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.prod.ejs",
+      template: path.resolve(__dirname, "../src/index.prod.ejs"),
     })
   ],
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "../dist"),
     filename: "[name].[contenthash:8].js",
     chunkFilename: "[name].[chunkhash:8].js",
     clean: true,
