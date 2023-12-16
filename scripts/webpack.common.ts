@@ -4,6 +4,9 @@ import * as path from 'path';
 const config: webpack.Configuration = {
   entry: path.resolve(__dirname, '../src/index.tsx'),
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+    },
     extensions: [".tsx", ".ts", ".js"],
   },
   cache: {

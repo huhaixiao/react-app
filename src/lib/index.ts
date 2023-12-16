@@ -1,4 +1,5 @@
-export { ConfigProvider, theme } from "antd";
-export { default as zhCN } from "antd/locale/zh_CN";
-export { default as enUS } from "antd/locale/en_US";
-export { ThemeProvider } from "styled-components";
+export * from './antd';
+export * from './@ant-design/icons';
+export * from './@ant-design/pro-components';
+export * from './styled-components';
+export * from './use-deep-compare-effect';

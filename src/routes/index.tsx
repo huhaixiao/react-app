@@ -6,6 +6,7 @@ import { Home } from "./home/";
 import { Login } from "./login";
 import { ConfigProvider, theme, zhCN, ThemeProvider } from "../lib";
 import { dark } from "../config";
+import { Editor } from "./editor";
 
 export const App = () => {
   const router = createBrowserRouter([
@@ -17,12 +18,15 @@ export const App = () => {
           path: "login",
           element: <Login />,
         },
+        {
+          path: "editor",
+          element: <Editor />
+        }
       ],
     },
   ]);
 
   return (
-    
     <ThemeProvider theme={dark}>
       <ConfigProvider
         locale={zhCN}

@@ -9,7 +9,6 @@ export class Editor extends Component {
   render() {
     return (
       <div className="App">
-        <h2>Using CKEditor&nbsp;5 build in React</h2>
         <CKEditor
           editor={ClassicEditor}
           data="<p>Hello from CKEditor&nbsp;5!</p>"
