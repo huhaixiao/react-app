@@ -4,9 +4,8 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./home/";
 import { Login } from "./login";
-import { ConfigProvider, theme, zhCN, ThemeProvider } from "../lib";
-import { dark } from "../config";
 import { Editor } from "./editor";
+import { StoreContextProvider } from "@/stores";
 
 export const App = () => {
   const router = createBrowserRouter([
@@ -20,30 +19,15 @@ export const App = () => {
         },
         {
           path: "editor",
-          element: <Editor />
-        }
+          element: <Editor />,
+        },
       ],
     },
   ]);
 
   return (
-    <ThemeProvider theme={dark}>
-      <ConfigProvider
-        locale={zhCN}
-        theme={{
-          algorithm: theme.darkAlgorithm,
-          token: {
-            // Seed Token，影响范围大
-            colorPrimary: "#00b96b",
-            borderRadius: 2,
-
-            // 派生变量，影响范围小
-            colorBgContainer: "black",
-          },
-        }}
-      >
-        <RouterProvider router={router} />
-      </ConfigProvider>
-    </ThemeProvider>
+    <StoreContextProvider>
+      <RouterProvider router={router} />
+    </StoreContextProvider>
   );
 };
