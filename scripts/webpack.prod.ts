@@ -8,7 +8,7 @@ const config: webpack.Configuration = merge(Config, {
   mode: "production",
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "../src/index.prod.ejs"),
+      template: path.resolve(__dirname, "../src/index.ejs"),
     })
   ],
   output: {

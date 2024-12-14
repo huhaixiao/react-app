@@ -12,7 +12,7 @@ const config: webpack.Configuration = merge(Config, {
   devtool: "source-map",
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/index.dev.ejs'),
+      template: path.resolve(__dirname, '../src/index.ejs'),
     }),
     new ReactRefreshPlugin({
       overlay: true,

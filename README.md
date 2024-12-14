@@ -1,10 +1,37 @@
-- npm patch
+# README
 
-# github actions
+## babel
 
-- ubuntu-latest
-- windows-latest
-- macos-latest
+## webpack
+
+- `autoprefixer`
+
+## react
+
+## eslint
+
+## prettier
+
+## npm
+
+- `npm patch`
+- `npm audit`
+- `npm view package`
+
+## packages
+
+- `react`
+- `react-dom`
+- `react-router-dom`
+- `axios`
+- `lodash`
+- `antd`
+- `ahooks`
+- `react-query`
+- `use-deep-compare-effect`
+- `styled-components`
+- `swiper`
+- `@ckeditor`
 
 ## 证书
 
