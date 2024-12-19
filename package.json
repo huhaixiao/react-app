@@ -1,13 +1,19 @@
 {
   "scripts": {
     "start": "ts-node scripts/start.ts",
-    "build": "ts-node scripts/build.ts"
+    "dev": "webpack serve --config webpack.dev.cjs",
+    "build": "webpack --config webpack.prod.cjs",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
+    "format": "",
+    "check": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
+    "@eslint/js": "^9.17.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
     "@types/lodash": "^4.14.202",
     "@types/node": "^20.8.10",
@@ -17,19 +23,20 @@
     "@types/webpack": "^5.28.0",
     "@types/webpack-dev-server": "^4.7.2",
     "@types/webpack-merge": "^5.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
     "antd": "^5.11.1",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
-    "eslint": "^8.34.0",
-    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint": "^8.57.1",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react": "^7.37.2",
     "eventemitter3": "^5.0.1",
+    "globals": "^15.14.0",
     "html-webpack-plugin": "^5.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -39,6 +46,7 @@
     "styled-components": "^5.3.6",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.5",
+    "typescript-eslint": "^8.18.1",
     "use-deep-compare-effect": "^1.8.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
@@ -47,5 +55,6 @@
   },
   "overrides": {
     "react": "$react"
-  }
+  },
+  "type": "module"
 }

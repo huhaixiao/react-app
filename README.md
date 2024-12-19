@@ -10,6 +10,20 @@
 
 ## eslint
 
+- https://eslint.org/
+- [Package.json Conventions](https://eslint.org/docs/latest/contribute/package-json-conventions)
+- `npm init @eslint/config@latest`
+- `@eslint/js`
+- `typescript-eslint`
+- `@typescript-eslint/parser`
+- `@typescript-eslint/eslint-plugin`
+- `eslint-plugin-react`
+- `globals`
+- `eslint-plugin-import`
+- `eslint-plugin-n`
+- `eslint-plugin-promise`
+- `minimatch`
+
 ## prettier
 
 ## npm

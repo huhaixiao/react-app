@@ -1,10 +1,6 @@
 import React, { StrictMode, Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { ThemeContextProvider } from "../../hooks/theme";
-import {
-  ThemeProps,
-  createGlobalStyle,
-} from "@/lib";
+import { createGlobalStyle, ThemeProps } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   html:root {
@@ -33,9 +29,7 @@ export const Home = () => {
       <GlobalStyle />
       <StrictMode>
         <Suspense fallback={<Loading />}>
-          <ThemeContextProvider>
             <Outlet />
-          </ThemeContextProvider>
         </Suspense>
       </StrictMode>
     </>

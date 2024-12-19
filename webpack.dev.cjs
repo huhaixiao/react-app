@@ -1,18 +1,15 @@
-import * as path from "path";
-import * as webpack from "webpack";
-import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
-import { merge } from "webpack-merge";
-import Config from "./webpack.common";
-// in case you run into any typescript error when configuring `devServer`
-import "webpack-dev-server";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+const path = require('path');
+const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const { merge } = require('webpack-merge');
+const Config = require('./webpack.common.cjs');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const config: webpack.Configuration = merge(Config, {
+module.exports = merge(Config, {
   mode: "development",
   devtool: "source-map",
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/index.ejs'),
+      template: path.resolve(__dirname, './src/index.ejs'),
     }),
     new ReactRefreshPlugin({
       overlay: true,
@@ -59,5 +56,3 @@ const config: webpack.Configuration = merge(Config, {
     proxy: {},
   },
 });
-
-export default config;

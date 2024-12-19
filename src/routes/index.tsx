@@ -3,7 +3,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./home/";
-import { Login } from "./login";
 import { Editor } from "./editor";
 import { StoreContextProvider } from "@/stores";
 
@@ -13,10 +12,6 @@ export const App = () => {
       path: "/",
       element: <Home />,
       children: [
-        {
-          path: "login",
-          element: <Login />,
-        },
         {
           path: "editor",
           element: <Editor />,

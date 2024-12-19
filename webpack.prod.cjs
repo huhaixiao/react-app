@@ -1,14 +1,13 @@
-import * as path from "path";
-import * as webpack from "webpack";
-import { merge } from "webpack-merge";
-import Config from "./webpack.common";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+const path = require('path');
+const { merge } = require('webpack-merge');
+const Config = require('webpack.common.cjs');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const config: webpack.Configuration = merge(Config, {
+module.exports = merge(Config, {
   mode: "production",
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "../src/index.ejs"),
+      template: path.resolve(__dirname, "./src/index.ejs"),
     })
   ],
   output: {
@@ -50,5 +49,3 @@ const config: webpack.Configuration = merge(Config, {
     ],
   },
 });
-
-export default config;
