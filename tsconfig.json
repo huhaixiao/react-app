@@ -5,13 +5,9 @@
     "moduleResolution": "node", // 解析模块时采用 Node.js 的规则
     "baseUrl": "./", // 基础路径
     "paths": {
-      "@/*": [
-        "src/*"
-      ] // 支持路径别名 @ 解析到 src 目录
+      "@/*": ["src/*"] // 支持路径别名 @ 解析到 src 目录
     },
-    "types": [
-      "node"
-    ], // 支持 Node.js 类型
+    "types": ["node"], // 支持 Node.js 类型
     "resolveJsonModule": true, // 允许导入 JSON 模块
     "esModuleInterop": true, // 允许默认导入 CommonJS 模块
     "forceConsistentCasingInFileNames": true, // 强制一致的文件名大小写
@@ -19,5 +15,6 @@
     "skipLibCheck": true, // 跳过库文件的类型检查
     "allowSyntheticDefaultImports": true, // 允许模拟默认导入（对于不支持默认导出的模块）
     "allowJs": true // 允许 JavaScript 文件的类型检查
-  }
+  },
+  "include": ["src/**/*", "globals.d.ts"]
 }

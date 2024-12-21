@@ -1,28 +1,27 @@
 // https://reactjs.org/docs/code-splitting.html
 // https://beta.reactjs.org/reference/react/Suspense
-import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home } from "./home/";
-import { Editor } from "./editor";
-import { StoreContextProvider } from "@/stores";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router';
+import { Home } from './home/';
+import { StoreContextProvider } from '@/stores';
+import { About } from './about';
+import { Dashboard } from './dashboard';
 
 export const App = () => {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-      children: [
-        {
-          path: "editor",
-          element: <Editor />,
-        },
-      ],
-    },
-  ]);
-
   return (
-    <StoreContextProvider>
-      <RouterProvider router={router} />
-    </StoreContextProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <StoreContextProvider>
+              <Home />
+            </StoreContextProvider>
+          }
+        />
+        <Route path="about" element={<About />} />
+        <Route path="dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 };

@@ -18,6 +18,14 @@ module.exports = merge(Config, {
   module: {
     rules: [
       {
+        test: /\.webp/i,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
+      },
+      {
         test: /\.css/,
         use: [
           {

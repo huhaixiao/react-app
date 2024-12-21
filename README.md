@@ -1,5 +1,13 @@
 # README
 
+## typescript
+
+- `typescript`
+- `ts-node`
+  - `ts-node script.ts`
+- `tslib`
+- `@types/node`
+
 ## babel
 
 ## webpack
@@ -7,6 +15,10 @@
 - `autoprefixer`
 
 ## react
+
+## react-router
+
+- https://reactrouter.com/
 
 ## eslint
 
